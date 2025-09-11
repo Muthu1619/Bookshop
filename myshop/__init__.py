@@ -5,7 +5,7 @@ from flask_login import LoginManager
 import os
 app=Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///D:/Codes/Python/bookolx/eazyshop/shop.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///shop.db'
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "fallback-secret")
 db=SQLAlchemy(app)
 bcrypt=Bcrypt(app)
