@@ -1,7 +1,7 @@
 from wtforms import StringField,PasswordField,SubmitField,FloatField,IntegerField,TextAreaField,ValidationError,HiddenField
 from flask_wtf import FlaskForm
 from wtforms.validators import DataRequired,Length,Email,EqualTo,InputRequired
-from eazyshop.models import User,Book
+from myshop.models import User,Book
 
 class RegistrationForm(FlaskForm):
     username=StringField('Username',validators=[DataRequired(),Length(min=2,max=20)])
