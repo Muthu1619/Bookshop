@@ -1,7 +1,7 @@
 from flask import render_template,flash,redirect,url_for
-from eazyshop import app,db
-from eazyshop.forms import RegistrationForm,LoginForm,RechargeForm,OrderForm,SellForm
-from eazyshop.models import User,Book
+from myshop import app,db
+from myshop.forms import RegistrationForm,LoginForm,RechargeForm,OrderForm,SellForm
+from myshop.models import User,Book
 from flask_login import login_user,logout_user,current_user
 
 @app.route('/')
