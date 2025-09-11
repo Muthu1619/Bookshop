@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Sell Books - EazyShop{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="card shadow-lg border-0" style="border-radius:20px; overflow:hidden;">
+                
+                <!-- Card Header -->
+                <div class="card-header text-center text-white" 
+                     style="background: linear-gradient(135deg, #ff758c, #ff7eb3);">
+                    <h3 class="mb-0">📚 Sell Your Book</h3>
+                    <small>"Fill the details to list your book for sale"</small>
+                </div>
+
+                <!-- Card Body -->
+                 <form method="POST">
+                <div class="card-body" style="background:#fdfdfd;">
+    
+                        {{ form.hidden_tag() }}
+
+                        {{form.seller(type='hidden',id='seller',value=current_user.id)}}
+
+                        <!-- Book Name -->
+                        <div class="mb-3">
+                            <label for="book_name" class="form-label fw-bold">📖 Book Name</label>
+                            {{ form.book_name(class="form-control rounded-pill", placeholder="Enter Book Name", id="book_name") }}
+                        </div>
+
+                        <!-- Author Name -->
+                        <div class="mb-3">
+                            <label for="author_name" class="form-label fw-bold">✍️ Author</label>
+                            {{ form.author_name(class="form-control rounded-pill", placeholder="Enter Author Name", id="author_name") }}
+                        </div>
+
+                        <!-- Price -->
+                        <div class="mb-3">
+                            <label for="price" class="form-label fw-bold">💰 Price</label>
+                            {{ form.price(class="form-control rounded-pill", placeholder="Enter Price", id="price") }}
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mb-3">
+                            <label for="description" class="form-label fw-bold">📄 Description</label>
+                            {{ form.description(class="form-control rounded-pill", placeholder="Add Some Description about the Product", id="description") }}
+                        </div>>
+
+                        <!-- Quantity -->
+                        <div class="mb-3">
+                            <label for="quantity" class="form-label fw-bold">📦 Quantity</label>
+                            {{ form.quantity(class="form-control rounded-pill", placeholder="Enter Quantity", id="quantity") }}
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="text-center mt-4">
+                            {{ form.submit(class="btn btn-gradient btn-lg px-5", style="background: linear-gradient(135deg, #4e54c8, #8f94fb); color:white; font-weight:600; border-radius:25px;") }}
+                        </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

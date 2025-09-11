@@ -1,0 +1,61 @@
+<!-- Modal for More Info -->
+<div class="modal fade" id="Modal-MoreInfo-{{ book.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius:20px; overflow:hidden;">
+
+      <!-- Modal Header -->
+      <div class="modal-header" style="background: linear-gradient(135deg, #4e54c8, #8f94fb); color:white;">
+        <h5 class="modal-title" id="ModalLabel">
+          📖 {{ book.title }}
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="modal-body" style="background:#fdfdfd;">
+        <p><strong>Author:</strong> {{ book.author }}</p>
+        <p><strong>Quantity Available:</strong> {{ book.quantity }}</p>
+        <p><strong>Seller:</strong> {{ book.seller }}</p>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer" style="background:#f8f9fa;">
+        <button type="button" class="btn btn-secondary"  data-bs-target="#Modal-BuyNow-{{ book.id }}" 
+        data-bs-toggle="modal" 
+        data-bs-dismiss="modal">Buy Now</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="Modal-BuyNow-{{ book.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius:20px; overflow:hidden;">
+
+      <!-- Modal Header -->
+      <div class="modal-header" style="background: linear-gradient(135deg, #4e54c8, #8f94fb); color:white;">
+        <h5 class="modal-title" id="ModalLabel">
+          📖 {{ book.title }}
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <!-- Modal Body -->
+        <form method="POST">
+      <div class="modal-body" style="background:#fdfdfd;">
+        <p><strong>Quantity Available:</strong> {{ book.quantity }}</p>
+          {{ form.hidden_tag() }}
+            {{ form.Buyer_id(class='form-control rounded-pill',type='hidden',id='buyer_id',value=current_user.id) }}
+            {{ form.Book_id(class='form-control rounded-pill',type='hidden',id='book_id',value=book.id) }}
+          <p><strong>Enter Quantity:</strong> {{ form.quantity(id='quantity') }}</p>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="modal-footer" style="background:#f8f9fa;">
+        {{ form.submit(class="btn btn-cta ms-2")}}
+      </div>
+        </form>
+    </div>
+  </div>
+</div>

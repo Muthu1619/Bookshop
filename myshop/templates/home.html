@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}EazyShop.in{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="text-center py-5" style="background: linear-gradient(135deg, #ff9a9e, #fad0c4); border-radius: 15px;">
+  <div data-aos="fade-up">
+    <h1 class="display-4 fw-bold text-dark">📚 Welcome to <span style="color:#4e54c8;">EazyShop</span></h1>
+    <p class="lead mt-3 text-dark">
+      “Where Pages Meet Profits — Buy. Sell. Repeat.”
+    </p>
+    <div class="mt-4">
+      <a href="#" class="btn btn-lg btn-primary mx-2 shadow">Shop Now</a>
+      <a href="#" class="btn btn-lg btn-success mx-2 shadow">Sell Your Books</a>
+    </div>
+  </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5">
+  <div class="row text-center g-4">
+    <div class="col-md-4" data-aos="zoom-in">
+      <div class="p-4 shadow rounded" style="background:#ffe066;">
+        <h3>💸 Best Deals</h3>
+        <p>Get books at jaw-dropping prices. Save more, read more.</p>
+      </div>
+    </div>
+    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+      <div class="p-4 shadow rounded" style="background:#74c69d; color:white;">
+        <h3>♻️ Easy Resell</h3>
+        <p>Turn your old reads into cash. “Turn Pages, Earn Wages.”</p>
+      </div>
+    </div>
+    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+      <div class="p-4 shadow rounded" style="background:#ff758f; color:white;">
+        <h3>⚡ Fast & Fun</h3>
+        <p>Seamless buying & selling with just a few clicks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call-to-Action Section -->
+<section class="text-center py-5" style="background: linear-gradient(135deg, #a18cd1, #fbc2eb); border-radius:15px;">
+  <div data-aos="fade-up">
+    <h2 class="fw-bold text-dark">Join the Reading Revolution 🚀</h2>
+    <p class="lead">“From paperbacks to paybacks, we’ve got you covered.”</p>
+    <a href="#" class="btn btn-warning btn-lg shadow mt-3">Register Now</a>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block content_scripts %}
+<!-- AOS Library for Animations -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Recharge Wallet - EazyShop{% endblock %}
+
+{% block content %}
+
+<div class="d-flex justify-content-center align-items-center" style="min-height:75vh;">
+  <div class="card shadow-lg border-0" style="width: 420px; border-radius:20px; overflow:hidden;">
+    
+    <!-- Card Header -->
+    <div class="card-header text-center text-white" 
+         style="background: linear-gradient(135deg, #ff7eb3, #ff758c);">
+      <h3 class="mb-0">💳 Recharge Wallet</h3>
+      <small>"Top-up & keep shopping nonstop"</small>
+    </div>
+
+    <!-- Card Body -->
+    <div class="card-body p-4" style="background: #fdfdfd;">
+
+      <!-- Recharge Form -->
+      <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <!-- Amount -->
+        <div class="form-floating mb-3">
+          {{ form.amount(class="form-control rounded-pill text-center fw-bold fs-5", 
+                         id="amount", 
+                         placeholder="Enter amount") }}
+          <label for="amount">💰 Enter Amount</label>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="d-grid">
+          {{ form.submit(class="btn btn-lg text-white rounded-pill fw-bold", 
+                         style="background: linear-gradient(135deg, #4e54c8, #8f94fb); transition: transform 0.2s;", 
+                         onmouseover="this.style.transform='scale(1.05)'", 
+                         onmouseout="this.style.transform='scale(1)'") }}
+        </div>
+
+      </form>
+
+      <!-- Note -->
+      <div class="text-center mt-3">
+        <small class="text-muted">⚡ Fast, secure & instant recharge</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
