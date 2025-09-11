@@ -1,4 +1,4 @@
-from eazyshop import db,bcrypt,login_manager
+from myshop import db,bcrypt,login_manager
 from flask_login import UserMixin
 @login_manager.user_loader
 def load_user(user_id):
