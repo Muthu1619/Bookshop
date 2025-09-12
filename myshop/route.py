@@ -2,7 +2,7 @@ from flask import render_template,flash,redirect,url_for
 from myshop import app,db
 from myshop.forms import RegistrationForm,LoginForm,RechargeForm,OrderForm,SellForm
 from myshop.models import User,Book
-from flask_login import login_user,logout_user,current_user
+from flask_login import login_user,logout_user,current_user,login_required
 
 @app.route('/')
 @app.route('/home')
@@ -57,6 +57,7 @@ def recharge():
     return render_template('recharge.html',form=form)
 
 @app.route('/buy',methods=['GET','POST'])
+@login_required
 def buy():
     Books=Book.query.filter(Book.quantity!=0).all()
     form=OrderForm()
@@ -72,6 +73,7 @@ def buy():
     return render_template('buy.html', Books=Books,form=form)
 
 @app.route('/sell',methods=['GET','POST'])
+@login_required
 def sell():
     form=SellForm()
     if form.validate_on_submit():
