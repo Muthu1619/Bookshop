@@ -185,6 +185,11 @@
     });
   }, 3000);
 </script>
+  <script>
+  window.addEventListener("beforeunload", function (e) {
+      navigator.sendBeacon("/logout"); // call logout route
+  });
+</script>
    <main>
     <div class="container">
       {% block content %}
